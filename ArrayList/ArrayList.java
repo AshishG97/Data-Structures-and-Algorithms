@@ -6,7 +6,7 @@ public class ArrayList {
     static int INITIAL_CAPACITY = 5;
     static int size = 0;
     static int capacity = INITIAL_CAPACITY;
-    static int [] arr = new int[INITIAL_CAPACITY];
+    static Integer [] arr = new Integer[INITIAL_CAPACITY];
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -23,6 +23,7 @@ public class ArrayList {
         arr[size] = toInsert;
         size += 1;
     }
+
     //  This program will add elements at the beginning of the ArrayList
     private static void insertAtStart(){
         System.out.println("Enter the number to insert at the start");
@@ -65,6 +66,35 @@ public class ArrayList {
 
     }
 
+    // This removes the last element from the Array
+    private static void removeLast(){
+        Integer removed = arr[size - 1];
+        System.out.println("Removing " + removed + " From the ArrayList");
+        arr[size - 1] = null;
+        size--;
+    }
+
+    // This removes the First element from the Array
+    private static void removeFirst(){
+        System.out.println("The Removed Element is " + arr[0]);
+        for(int i = 1; i < size; i++){
+            arr[i-1] = arr[i];
+        }
+        size--;
+    }
+
+    // This removes the numbers from a specific index from the ArrayList
+    private static void removeFromIndex(){
+        System.out.println("Enter the index to remove number at that index");
+        int fromIndex = sc.nextInt();
+        System.out.println("The removed number is " + arr[fromIndex]);
+        for(int i = fromIndex; i < size; i++){
+            arr[i] = arr[i + 1];
+        }
+        arr[size] = null;
+        size--;
+    }
+
     // Print the ArrayList elements
     private static void printArray(){
         for(int i = 0; i < size; i++){
@@ -77,6 +107,7 @@ public class ArrayList {
         return size == capacity;
     }
 
+    
     // Increases the size of the ArrayList
     private static void expandArray() {
 
@@ -86,11 +117,10 @@ public class ArrayList {
         }
 
         capacity = 2*capacity;
-        arr = new int[capacity];
+        arr = new Integer[capacity];
         for (int i = 0; i < size; i++) {
             arr[i] = temp[i];
         }
     }
 
 }
-
