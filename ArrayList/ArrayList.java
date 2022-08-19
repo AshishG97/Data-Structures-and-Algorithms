@@ -10,10 +10,10 @@ public class ArrayList {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        
+        // Call The Methods to run here
     }
 
-
+    // This program will add elements at the End of the ArrayList
     private static  void insertAtBack(){
         System.out.println("Enter the number to insert at the back");
         int toInsert = sc.nextInt();
@@ -23,7 +23,7 @@ public class ArrayList {
         arr[size] = toInsert;
         size += 1;
     }
-
+    //  This program will add elements at the beginning of the ArrayList
     private static void insertAtStart(){
         System.out.println("Enter the number to insert at the start");
         int toInsert = sc.nextInt();
@@ -39,6 +39,7 @@ public class ArrayList {
         size++;
     }
 
+    //  This program will add elements at the specific index of the ArrayList
     private static void insertAtIndex(){
         System.out.println("Enter the number to insert");
         int toInsert = sc.nextInt();
@@ -64,19 +65,19 @@ public class ArrayList {
 
     }
 
-
+    // Print the ArrayList elements
     private static void printArray(){
         for(int i = 0; i < size; i++){
             System.out.println(arr[i]);
         }
     }
 
-
+    // Checks if ArrayList is Full or not
     private static boolean isArrayFull(int size, int capacity){
         return size == capacity;
     }
 
-
+    // Increases the size of the ArrayList
     private static void expandArray() {
 
         int[] temp = new int[capacity];
