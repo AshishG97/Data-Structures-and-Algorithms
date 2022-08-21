@@ -1,9 +1,9 @@
 package LinkedList;
 
-public class SLLGenerics<T> {
+public class SLLGenerics<T> {       // This Class Implements Singly Linked List using Generics in Java
 
 
-    public static void main(String[] args){
+    public static void main(String[] args){    // Main Method of the Class
         list<Integer> list = new list<>();
         list.addToFront(20);
         list.addToFront(21);
@@ -11,15 +11,15 @@ public class SLLGenerics<T> {
         list.printLL();
     }
 
-    static class list<T>{
+    static class list<T>{        // This Class list consists of Methods to Add and Remove Elements from the Linked List
         private Node<T> head;
-        private void addToFront(T data){
+        private void addToFront(T data){     // This Method adds element to the front of SLL(Singly Linked List)
             Node<T> newNode = new Node<T>(data);
             newNode.next = head;
             head = newNode;
         }
 
-        private void addToBack(T data){
+        private void addToBack(T data){      // This Method adds element to the back of the SLL
             if(head == null){    // If the LL is Empty
                 head = new Node<T>(data);
             }
@@ -33,12 +33,12 @@ public class SLLGenerics<T> {
         }
 
 
-        private void removeFromFront(){
+        private void removeFromFront(){     // This Method removes the element from the front of SLL
             head = head.next;
         }
 
 
-        private void removeFromBack(){
+        private void removeFromBack(){      // This Method removes the element from the back of the SLL
             if(head == null){
                 return;
             }
@@ -55,7 +55,7 @@ public class SLLGenerics<T> {
         }
 
 
-        private void printLL(){
+        private void printLL(){      // This Method prints the SLL Elements
             Node<T> current = head;
             while(current != null){
                 System.out.println(current.data);
@@ -66,7 +66,7 @@ public class SLLGenerics<T> {
 
 
 
-    private static class Node<T>{
+    private static class Node<T>{        // This class defines the structure of SLL using GENERICS in Java
         private final T data;
         private Node<T> next;
 
