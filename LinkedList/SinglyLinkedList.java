@@ -57,6 +57,23 @@ public class SinglyLinkedList {     // This class shows hoe Singly Linked List i
             current = current.next;
         }
     }
+    
+    
+    
+    public static void removeDuplicate(){  // This method calls recursive rRemove method to delete duplicate node and it assumes that tyhe LL is sorted in order
+        head = rRemove(head);
+    }
+
+    private static Node rRemove(Node current){  // This method removes the duplicate elements in the LL.
+        if(current.next == null){
+            return null;
+        }
+        current.next = rRemove(current.next);
+        if(current.next != null && (current.data == current.next.data)){
+            return current.next;
+        }
+        return current;
+    }
 
 
         // This is The Node Class to define the Structure of the Node it consists of two Constructors and 2 variables;
