@@ -6,14 +6,7 @@ public class DLL {
     private static int len;
 
     public static void main(String[] args) {
-       insertAtBegin(5);
-        insertAtBegin(4);
-        insertAtBegin(2);
-        insertAtBegin(1);
-        printInOrder();
-        System.out.println("----------");
-        insertAtPosition(3, 0);
-       printInOrder();
+       // Call The moethods to run here
     }
 
     private static void insertAtBack(int data){
