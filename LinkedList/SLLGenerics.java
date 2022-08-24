@@ -62,6 +62,21 @@ public class SLLGenerics<T> {       // This Class Implements Singly Linked List 
                 current = current.next;
             }
         }
+        
+        public void removeDuplicates(){     // This methods calls rRemove() method to delete duplicates nodes This methos assumes that the LL is sorted in order
+            head = rRemove(head);
+        }
+
+        private Node<T> rRemove(Node<T> current){       // This is recursive method that deletes the Duplicate Nodes.
+            if(current == null){
+                return null;
+            }
+            current.next = rRemove(current.next);
+            if(current.next != null && (current.data.equals(current.next.data))){
+                return current.next;
+            }
+            return current;
+        }
     }
 
 
