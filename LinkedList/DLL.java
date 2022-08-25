@@ -6,14 +6,7 @@ public class DLL {
     private static int len;
 
     public static void main(String[] args) {
-       insertAtBegin(5);
-        insertAtBegin(4);
-        insertAtBegin(2);
-        insertAtBegin(1);
-        printInOrder();
-        System.out.println("----------");
-        insertAtPosition(3, 0);
-       printInOrder();
+       // Call The moethods to run here
     }
 
     private static void insertAtBack(int data){
@@ -73,6 +66,64 @@ public class DLL {
         }
     }
 
+     private static void removeFromFirst(){
+        if(head == null){
+            System.out.println("You can not remove the list is empty Doubly Linked List");
+        }
+        else if(head == tail){
+            System.out.println("The removed element is: " + head.data);
+            head = tail = null;
+            len--;
+        }
+        else{
+            System.out.println("The removed element is: " + head.data);
+            head = head.next;
+            len--;
+        }
+    }
+
+
+    private static void removeFromLast(){
+        if(tail == null){
+            System.out.println("You can not remove the list is empty Doubly Linked List");
+        }
+        else if(head == tail){
+            System.out.println("The removed element is: " + tail.data);
+            head = tail = null;
+            len--;
+        }
+        else{
+            System.out.println("The removed element is: " + tail.data);
+            tail = tail.prev;
+            tail.next = null;
+            len--;
+        }
+    }
+
+
+    private static void removeFromIndex(int index){
+        if(index >= len){
+            System.out.println("Index is too large");
+        }
+        else if(index == len - 1){
+            removeFromLast();
+        }
+        else if (index == 0) {
+            removeFromFirst();
+        }
+        else{
+            Node temp = head;
+            int size = 0;
+            while(size <= index - 2){
+                temp = temp.next;
+                size++;
+            }
+            temp.next = temp.next.next;
+            temp.next.prev = temp;
+        }
+    }
+    
+    
     private static void printInOrder(){
         Node node = head;
         while(node != null){
