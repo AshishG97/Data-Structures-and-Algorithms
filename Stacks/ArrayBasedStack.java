@@ -13,10 +13,13 @@ public class ArrayBasedStack {
 
     public static void main(String[] args) {
         
+
     }
 
 
     private static class Stack{
+
+
         public static void push(int data){
             if(isStackFull(size, capacity)){
                 expandArray();
@@ -39,7 +42,14 @@ public class ArrayBasedStack {
             else{
                 head = 0;
             }
+        }
 
+        public static void top(){
+            System.out.println(head);
+        }
+
+        public static int size(){
+            return size;
         }
 
         public static boolean isEmpty(){
